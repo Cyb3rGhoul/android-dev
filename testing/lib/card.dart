@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Login Page'),
+      home: const MyHomePage(title: 'Hello'),
     );
   }
 }
@@ -31,24 +31,29 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var emailText = TextEditingController();
-  var passwordText = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromRGBO(83, 104, 120, 1),
         title: Center(
             child: Text(
           widget.title,
-          style: TextStyle(
-              fontFamily: 'FontMain',
-              color: Colors.black,
-              fontSize: 40,
-              fontWeight: FontWeight.w500),
+          style: TextStyle(color: Colors.white),
         )),
       ),
-      body: Text('hello'),
+      body: Center(
+        child: Card(
+            shadowColor: Colors.blue, // default is Colors.black
+            elevation: 5, // default is 1
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Hello Harry',
+                style: TextStyle(fontSize: 21),
+              ),
+            )),
+      ),
     );
   }
 }
